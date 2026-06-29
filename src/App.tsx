@@ -5,11 +5,9 @@ import {
   Linkedin, 
   Twitter, 
   Layers, 
-  ArrowRight,
   Compass
 } from "lucide-react";
 import { GridShowcase } from "./components/GridShowcase";
-import { BioSection } from "./components/BioSection";
 import { ContactDrawer } from "./components/ContactDrawer";
 import { designerInfo } from "./data/portfolioData";
 
@@ -48,9 +46,6 @@ export default function App() {
           <nav className="flex items-center gap-4 sm:gap-8 font-mono text-[10px] tracking-widest text-neutral-500">
             <a href="#projects" className="hover:text-neutral-950 transition-colors uppercase">
               [INDEX]
-            </a>
-            <a href="#about" className="hover:text-neutral-950 transition-colors uppercase">
-              [SYSTEMS]
             </a>
             <button 
               onClick={() => setIsContactOpen(true)}
@@ -122,29 +117,6 @@ export default function App() {
 
         <section id="projects" className="py-12 md:py-20 scroll-mt-24">
           <GridShowcase />
-        </section>
-
-        <section className="scroll-mt-24">
-          <BioSection />
-        </section>
-
-        <section className="py-20 border-t border-neutral-200 flex flex-col items-center justify-center text-center">
-          <span className="font-mono text-[9px] tracking-widest text-neutral-400 uppercase mb-3">
-            COLLABORATION PROTOCOL
-          </span>
-          <h2 className="font-display font-semibold text-3xl sm:text-4xl text-neutral-900 tracking-tight max-w-lg mb-6">
-            Have a custom creative platform requiring pristine engineering?
-          </h2>
-          <p className="font-sans text-xs text-neutral-500 max-w-sm leading-relaxed mb-8">
-            Let&rsquo;s discuss custom grid boundaries, interactive typography components, and visual performance scales for your next release.
-          </p>
-          <button
-            onClick={() => setIsContactOpen(true)}
-            className="flex items-center gap-2 bg-neutral-950 hover:bg-neutral-800 text-white font-mono text-xs font-bold tracking-widest px-8 py-4 rounded-xl shadow-lg transition-all duration-300 hover:translate-y-[-2px] cursor-pointer"
-          >
-            <span>CALIBRATE AN INQUIRY</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
         </section>
 
       </main>
