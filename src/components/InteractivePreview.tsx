@@ -46,6 +46,22 @@ function AetherSimulation() {
   const filterRef = useRef<BiquadFilterNode | null>(null);
   const gainNodeRef = useRef<GainNode | null>(null);
 
+  const intensityRef = useRef(intensity);
+  const activeHarmonicsRef = useRef(activeHarmonics);
+  const mousePosRef = useRef(mousePos);
+
+  useEffect(() => {
+    intensityRef.current = intensity;
+  }, [intensity]);
+
+  useEffect(() => {
+    activeHarmonicsRef.current = activeHarmonics;
+  }, [activeHarmonics]);
+
+  useEffect(() => {
+    mousePosRef.current = mousePos;
+  }, [mousePos]);
+
   useEffect(() => {
     if (isPlaying) {
       try {
@@ -162,26 +178,30 @@ function AetherSimulation() {
         ctx.stroke();
       }
 
-      phase += 0.015 * (1 + intensity);
+      const currentIntensity = intensityRef.current;
+      const currentActiveHarmonics = activeHarmonicsRef.current;
+      const currentMousePos = mousePosRef.current;
 
-      activeHarmonics.forEach((harmonic, index) => {
+      phase += 0.015 * (1 + currentIntensity);
+
+      currentActiveHarmonics.forEach((harmonic, index) => {
         ctx.beginPath();
         ctx.lineWidth = index === 0 ? 2 : 1;
         ctx.strokeStyle = index === 0 
-          ? `rgba(56, 189, 248, ${0.4 + intensity * 0.4})` 
+          ? `rgba(56, 189, 248, ${0.4 + currentIntensity * 0.4})` 
           : `rgba(255, 255, 255, ${0.12 - index * 0.02})`;
 
         for (let x = 0; x < w; x++) {
-          const dx = x - mousePos.x;
-          const dy = h/2 - mousePos.y;
+          const dx = x - currentMousePos.x;
+          const dy = h/2 - currentMousePos.y;
           const dist = Math.sqrt(dx*dx + dy*dy);
-          const cursorInteraction = Math.max(0, 1 - dist / 300) * 40 * intensity;
+          const cursorInteraction = Math.max(0, 1 - dist / 300) * 40 * currentIntensity;
 
           const sineValue1 = Math.sin(x * 0.005 * harmonic + phase * harmonic);
           const sineValue2 = Math.cos(x * 0.01 + phase * 0.5);
           
           const y = h / 2 
-            + sineValue1 * (30 * intensity + cursorInteraction) 
+            + sineValue1 * (30 * currentIntensity + cursorInteraction) 
             + sineValue2 * 10 
             + (index * 15 - 30);
 
@@ -191,18 +211,18 @@ function AetherSimulation() {
         ctx.stroke();
       });
 
-      if (mousePos.x > 0 && mousePos.x < w && mousePos.y > 0 && mousePos.y < h) {
+      if (currentMousePos.x > 0 && currentMousePos.x < w && currentMousePos.y > 0 && currentMousePos.y < h) {
         ctx.beginPath();
-        const radGrd = ctx.createRadialGradient(mousePos.x, mousePos.y, 0, mousePos.x, mousePos.y, 100);
+        const radGrd = ctx.createRadialGradient(currentMousePos.x, currentMousePos.y, 0, currentMousePos.x, currentMousePos.y, 100);
         radGrd.addColorStop(0, "rgba(56, 189, 248, 0.08)");
         radGrd.addColorStop(1, "rgba(56, 189, 248, 0)");
         ctx.fillStyle = radGrd;
-        ctx.arc(mousePos.x, mousePos.y, 100, 0, Math.PI * 2);
+        ctx.arc(currentMousePos.x, currentMousePos.y, 100, 0, Math.PI * 2);
         ctx.fill();
 
         ctx.beginPath();
         ctx.fillStyle = "rgba(56, 189, 248, 0.6)";
-        ctx.arc(mousePos.x, mousePos.y, 3, 0, Math.PI * 2);
+        ctx.arc(currentMousePos.x, currentMousePos.y, 3, 0, Math.PI * 2);
         ctx.fill();
       }
 
@@ -215,7 +235,7 @@ function AetherSimulation() {
       window.removeEventListener("resize", resizeCanvas);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [intensity, activeHarmonics, mousePos]);
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
