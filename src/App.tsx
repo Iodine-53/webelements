@@ -10,7 +10,7 @@ import {
 import { GridShowcase } from "./components/GridShowcase";
 import { ContactDrawer } from "./components/ContactDrawer";
 import { designerInfo } from "./data/portfolioData";
-import heroImage from "./assets/images/hero_image_new.jpg";
+import { CodingIllustration } from "./components/CodingIllustration";
 
 export default function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -117,33 +117,14 @@ export default function App() {
               </motion.div>
             </div>
 
-            {/* Right Column: Hero Image with Frame/Aspect Style */}
+            {/* Right Column: Custom Coding Illustration */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.98, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               className="md:col-span-5 flex justify-center items-center"
             >
-              <div className="relative group w-full max-w-md lg:max-w-none">
-                {/* Decorative border frame to add editorial/structural feel */}
-                <div className="absolute -inset-3 rounded-2xl border border-neutral-200/50 pointer-events-none group-hover:scale-[1.02] transition-transform duration-500" />
-                <div className="absolute inset-0 bg-neutral-900/5 rounded-xl pointer-events-none" />
-                
-                {/* Main Image */}
-                <div className="aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] xl:aspect-[3/4] overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100 shadow-md">
-                  <img 
-                    src={heroImage}
-                    alt="Creative Direction Craft" 
-                    className="w-full h-full object-cover transition-all duration-700 ease-out scale-100 group-hover:scale-105"
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-                
-                {/* Structural subtitle accent for image */}
-                <div className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm border border-neutral-200 px-3 py-1.5 rounded-lg text-[9px] font-mono tracking-widest text-neutral-600 shadow-sm">
-                  IMG_REF // 1782767108088
-                </div>
-              </div>
+              <CodingIllustration />
             </motion.div>
           </div>
         </section>
