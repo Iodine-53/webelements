@@ -63,9 +63,9 @@ export default function App() {
           <div className="absolute top-0 left-0 h-full w-[1px] bg-neutral-200/30 pointer-events-none" />
           <div className="absolute top-0 right-0 h-full w-[1px] bg-neutral-200/30 pointer-events-none" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center">
             {/* Left Column: Text Content */}
-            <div className="lg:col-span-7 flex flex-col justify-center">
+            <div className="md:col-span-7 flex flex-col justify-center">
               <motion.div 
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -122,7 +122,7 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.98, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="lg:col-span-5 flex justify-center items-center"
+              className="md:col-span-5 flex justify-center items-center"
             >
               <div className="relative group w-full max-w-md lg:max-w-none">
                 {/* Decorative border frame to add editorial/structural feel */}
@@ -134,7 +134,7 @@ export default function App() {
                   <img 
                     src={heroImage}
                     alt="Creative Direction Craft" 
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 ease-out scale-100 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-all duration-700 ease-out scale-100 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
                 </div>
