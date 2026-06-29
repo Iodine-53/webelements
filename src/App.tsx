@@ -64,8 +64,8 @@ export default function App() {
 
       <main className="max-w-7xl w-full mx-auto px-6 sm:px-8 pt-32 flex-1">
         <section className="py-12 md:py-20 lg:py-28 border-b border-neutral-200/80 mb-16 relative">
-          <div className="absolute top-0 left-0 h-full w-[1px] bg-gradient-to-b from-neutral-200/50 via-transparent to-transparent pointer-events-none" />
-          <div className="absolute top-0 right-0 h-full w-[1px] bg-gradient-to-b from-neutral-200/50 via-transparent to-transparent pointer-events-none" />
+          <div className="absolute top-0 left-0 h-full w-[1px] bg-neutral-200/30 pointer-events-none" />
+          <div className="absolute top-0 right-0 h-full w-[1px] bg-neutral-200/30 pointer-events-none" />
 
           <div className="max-w-4xl">
             <motion.div 

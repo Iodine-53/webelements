@@ -66,10 +66,10 @@ export const BioSection: React.FC = () => {
         </div>
 
         <div className="lg:col-span-5 flex items-center justify-center relative bg-neutral-50 rounded-xl p-6 border border-neutral-200/40 overflow-hidden">
-          <div className="w-full h-full min-h-[220px] border border-dashed border-neutral-200 rounded p-4 relative flex flex-col justify-between select-none">
-            <div className="absolute top-0 left-12 h-full w-[1px] border-l border-dashed border-neutral-200" />
-            <div className="absolute top-0 right-24 h-full w-[1px] border-l border-dashed border-neutral-200" />
-            <div className="absolute top-20 left-0 w-full h-[1px] border-t border-dashed border-neutral-200" />
+          <div className="w-full h-full min-h-[220px] border border-neutral-200/80 rounded p-4 relative flex flex-col justify-between select-none">
+            <div className="absolute top-0 left-12 h-full w-[1px] bg-neutral-200/50" />
+            <div className="absolute top-0 right-24 h-full w-[1px] bg-neutral-200/50" />
+            <div className="absolute top-20 left-0 w-full h-[1px] bg-neutral-200/50" />
 
             <div className="flex justify-between items-start font-mono text-[8px] text-neutral-400">
               <span>CANVAS_BOUNDING: [100% x 100%]</span>
