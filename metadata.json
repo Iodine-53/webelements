@@ -1,6 +1,6 @@
 {
-  "name": "Web Designer Portfolio",
-  "description": "A minimalist, premium portfolio showcase for a high-end web designer, featuring a structured grid with parallax micro-interactions and interactive design previews.",
+  "name": "Webelements",
+  "description": "A minimalist, premium portfolio showcase for Webelements frontend design studio, featuring high-precision visual systems, custom layouts, and interactive design previews.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -1,22 +1,23 @@
 import { Project, DesignerInfo } from "../types";
-import imageAether from "../assets/images/project_aether_1782747484936.jpg";
+import imageAura from "../assets/images/aura_app.jpg";
 import imageKore from "../assets/images/project_kore_1782747499933.jpg";
 import imageVellum from "../assets/images/project_vellum_1782747513385.jpg";
-import imageHelix from "../assets/images/project_helix_1782747528637.jpg";
+import imageNero from "../assets/images/project_nero.png";
+import imageSpotTravel from "../assets/images/spot_travel.jpg";
 
 export const designerInfo: DesignerInfo = {
-  name: "Arthur Vance",
-  title: "Creative Frontend Designer",
-  bio: "Arthur Vance is an independent frontend developer and digital designer crafting bespoke visual systems for digital products, architectural indices, and art publications. Working at the intersection of typography, mathematical geometry, and fluid reactive motion, he creates web environments that feel both tactile and digital.",
-  philosophy: "I believe the web is an expressive, physical medium. Design is not about wrapping content in standard frameworks; it is about calibrating layout, typography, and negative space to construct a distinct atmosphere. My work focuses on structured asymmetry, subtle physical interactions, and modular system design.",
-  location: "Copenhagen, Denmark",
-  timezone: "CET (UTC+1)",
-  email: "hello@arthurvance.design",
+  name: "Webelements",
+  title: "Bespoke Frontend & UI Studio",
+  bio: "Webelements is an independent frontend design and development studio crafting high-precision visual systems, performance-driven web interfaces, and fluid digital experiences. Working at the intersection of clean structural layouts, modern development frameworks, and tactile interactive animations.",
+  philosophy: "We believe the web is an expressive, physical medium. Great digital work is not about wrapping content in generic layouts—it is about the meticulous calibration of spacing, typography, and physical micro-interactions to curate a distinct aesthetic and seamless functional flow.",
+  location: "Remote / Global",
+  timezone: "GMT/UTC",
+  email: "hello@webelements.design",
   socials: {
-    github: "https://github.com/arthurvance",
-    linkedin: "https://linkedin.com/in/arthurvance",
-    twitter: "https://twitter.com/arthurvance",
-    instagram: "https://instagram.com/arthurvance.design",
+    github: "https://github.com/Iodine-53",
+    linkedin: "https://linkedin.com/in/webelements",
+    twitter: "https://twitter.com/webelements",
+    instagram: "https://instagram.com/webelements.design",
   },
   skills: {
     design: [
@@ -48,19 +49,34 @@ export const designerInfo: DesignerInfo = {
 
 export const projects: Project[] = [
   {
-    id: "aether",
-    title: "AETHER",
-    subtitle: "Ambient Sound Synth",
+    id: "spottravel",
+    title: "SPOT TRAVEL",
+    subtitle: "Curated Bespoke Journeys",
     year: "2026",
-    role: "Design & Creative Development",
-    tags: ["Web Audio API", "HTML5 Canvas", "React", "Framer Motion"],
-    description: "An interactive ambient soundscape generator designed for deep concentration and sensory grounding. Users modulate multi-channel ambient frequencies and binaural rhythms via real-time spatial cursor vectors over a flowing particulate wave.",
-    technicalDetails: "Engineered using raw Web Audio API oscillators and gain nodes mapped to dynamic mouse movement. The background visual consists of a mathematical wave-mesh rendered on high-density HTML5 Canvas with custom damping equations.",
-    image: imageAether,
-    liveUrl: "https://aether.arthurvance.design",
-    githubUrl: "https://github.com/arthurvance/aether-synth",
-    color: "bg-slate-950",
-    accentColor: "#38bdf8"
+    role: "Lead Interactive Designer",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite"],
+    description: "At Spots, we design highly curated, editorially driven bespoke journeys for discerning travelers. Rather than standard tourist itineraries or boilerplate hotel bookings, we focus on an intentional, highly personalized approach to travel design.",
+    technicalDetails: "Built with React, TypeScript, Tailwind CSS, and Framer Motion. Bundled with Vite.",
+    image: imageSpotTravel,
+    liveUrl: "https://spotravel.vercel.app/",
+    githubUrl: "https://github.com/Iodine-53/styletravel",
+    color: "bg-[#0b1210]",
+    accentColor: "#d4af37"
+  },
+  {
+    id: "aura",
+    title: "AURA",
+    subtitle: "Decentralized Social Ecosystem",
+    year: "2026",
+    role: "Lead Protocol & UI Architect",
+    tags: ["React 19", "TypeScript", "Tailwind v4", "Framer Motion", "Web Audio API"],
+    description: "Aura is a decentralized, mobile-first social media ecosystem designed to return complete ownership and control of digital identity, content, and relationships to creators and users. Built on decentralized Web3 protocols (specifically the Lens Protocol and XMTP).",
+    technicalDetails: "React 19 + TypeScript\nTailwind v4\nFramer Motion\nWeb Audio API (no libraries — hand-rolled synth)",
+    image: imageAura,
+    liveUrl: "https://aurapp-red.vercel.app/",
+    githubUrl: "https://github.com/Iodine-53/aurapp",
+    color: "bg-[#0c0914]",
+    accentColor: "#a855f7"
   },
   {
     id: "kore",
@@ -93,18 +109,18 @@ export const projects: Project[] = [
     accentColor: "#9a3412"
   },
   {
-    id: "helix",
-    title: "HELIX",
-    subtitle: "Generative Pattern Space",
-    year: "2025",
-    role: "Creative Technologist",
-    tags: ["SVG Trigonometry", "Generative Geometry", "Reactive Controllers"],
-    description: "An interactive, browser-based mathematical canvas exploring recursive geometry, chaos theory spiral graphs, and matrix coordinate mutations through dynamic sliders.",
-    technicalDetails: "Constructed utilizing raw reactive SVG vector path elements rendering pure mathematical curves (Lissajous knots and Rose curves) in real-time. Leverages standard React state-binding optimized for high-frequency coordinate changes.",
-    image: imageHelix,
-    liveUrl: "https://helix.arthurvance.design",
-    githubUrl: "https://github.com/arthurvance/helix-patterns",
-    color: "bg-purple-950",
-    accentColor: "#a855f7"
+    id: "nero",
+    title: "NERO ESTORE",
+    subtitle: "Technical Apparel System",
+    year: "2026",
+    role: "Creative Frontend Engineer",
+    tags: ["React 19", "Tailwind v4", "Motion", "Vite 6"],
+    description: "Nero isn't just sports clothing; it’s a thoughtfully engineered system of apparel. It’s designed for individuals who demand technical mastery from their activewear but still appreciate the quiet elegance of high-end, minimalist design. Whether they are pushing through a chilly morning run or heading straight to a meeting in the city, Nero is built to transition beautifully with them.",
+    technicalDetails: "Engineered using React 19, TypeScript 5.8, and Vite 6 for high performance. Powered by Tailwind CSS v4 for clean, utility-first styling and Motion for physical, fluid micro-interactions, responsive grids, and elegant layout transitions.",
+    image: imageNero,
+    liveUrl: "https://nerofashion.vercel.app/",
+    githubUrl: "https://github.com/Iodine-53/nerofashion",
+    color: "bg-neutral-950",
+    accentColor: "#f5f5f5"
   }
 ];

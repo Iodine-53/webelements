@@ -11,6 +11,7 @@ import { GridShowcase } from "./components/GridShowcase";
 import { ContactDrawer } from "./components/ContactDrawer";
 import { designerInfo } from "./data/portfolioData";
 import { CodingIllustration } from "./components/CodingIllustration";
+import { ServicesSection } from "./components/ServicesSection";
 
 export default function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -37,10 +38,10 @@ export default function App() {
           <a href="#" className="flex items-center gap-2 group">
             <Layers className="w-4 h-4 text-neutral-800 transition-transform group-hover:rotate-12" />
             <span className="font-display font-semibold tracking-tight text-neutral-900 text-sm">
-              ARTHUR VANCE
+              WEBELEMENTS
             </span>
             <span className="font-mono text-[9px] text-neutral-400 font-medium hidden sm:inline ml-2 border border-neutral-200 px-1.5 py-0.5 rounded">
-              HQ_DK
+              HQ_GLB
             </span>
           </a>
 
@@ -73,7 +74,7 @@ export default function App() {
                 className="flex items-center gap-2 mb-6 text-neutral-400 font-mono text-[10px] tracking-widest"
               >
                 <Compass className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: "15s" }} />
-                <span>COPENHAGEN DESIGN STUDIO // SPECIALIST FRONTEND CRAFT</span>
+                <span>WEBELEMENTS FRONTEND STUDIO // SPECIALIST UI CRAFT</span>
               </motion.div>
 
               <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.05] tracking-tighter text-neutral-950 mb-8">
@@ -97,7 +98,7 @@ export default function App() {
               >
                 <div>
                   <span className="block text-neutral-300 mb-0.5">LOCATION COORDINATES</span>
-                  <span className="text-neutral-800 font-medium">55.6761° N, 12.5683° E</span>
+                  <span className="text-neutral-800 font-medium">GLOBAL NODE / REMOTE</span>
                 </div>
                 <div>
                   <span className="block text-neutral-300 mb-0.5">CURRENT DISCIPLINE</span>
@@ -129,6 +130,8 @@ export default function App() {
           </div>
         </section>
 
+        <ServicesSection />
+
         <section id="projects" className="py-12 md:py-20 scroll-mt-24">
           <GridShowcase />
         </section>
@@ -141,11 +144,11 @@ export default function App() {
             <div className="flex items-center gap-2">
               <Layers className="w-3.5 h-3.5 text-neutral-300" />
               <span className="font-display font-semibold tracking-tight text-white text-xs">
-                ARTHUR VANCE
+                WEBELEMENTS
               </span>
             </div>
             <p className="text-[10px] font-mono text-neutral-600 mt-1">
-              &copy; {new Date().getFullYear()} Arthur Vance. All structures, codes, and geometries are legally licensed.
+              &copy; {new Date().getFullYear()} Webelements. All structures, codes, and layouts are legally licensed.
             </p>
           </div>
 

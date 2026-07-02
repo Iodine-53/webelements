@@ -13,7 +13,7 @@ import {
   Laptop,
   Maximize2
 } from "lucide-react";
-import animationData from "../assets/12345.json";
+import animationData from "../assets/hero_coding.json";
 
 export function CodingIllustration() {
   const [isPlaying, setIsPlaying] = useState(true);

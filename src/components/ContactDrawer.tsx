@@ -111,10 +111,11 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({ isOpen, onClose })
                       onChange={(e) => setFormState({ ...formState, projectType: e.target.value })}
                       className="w-full bg-neutral-950 border border-neutral-800 rounded px-3 py-2.5 text-xs font-mono text-neutral-300 focus:outline-none focus:border-neutral-500 transition-colors"
                     >
-                      <option value="sound">AETHER [AMBIENT SYNTHESIS / WEB AUDIO]</option>
+                      <option value="travel">SPOT TRAVEL [CURATED TRAVEL DESIGN & ARCHITECTURE]</option>
+                      <option value="aura">AURA [DECENTRALIZED SOCIAL ECOSYSTEM / WEB3]</option>
                       <option value="brutalist">KORE [BRUTALIST ARCHITECTURAL GRID]</option>
                       <option value="editorial">VELLUM [EDITORIAL TEXT SYSTEM]</option>
-                      <option value="generative">HELIX [GEOMETRIC PLOTTER / MATH SYSTEM]</option>
+                      <option value="generative">NERO ESTORE [TECHNICAL E-COMMERCE CONFIGURATOR]</option>
                       <option value="custom">BESPOKE BRANDING / SPECIAL INQUIRY</option>
                     </select>
                   </div>
@@ -163,7 +164,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({ isOpen, onClose })
                       TRANSMISSION COMPLETE
                     </h3>
                     <p className="text-neutral-400 text-xs leading-relaxed max-w-xs font-mono">
-                      Inquiry coordinates successfully integrated. Arthur will calibrate a detailed analytical response within 24 hours.
+                      Inquiry coordinates successfully integrated. Webelements will calibrate a detailed analytical response within 24 hours.
                     </p>
                   </div>
 
