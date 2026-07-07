@@ -74,9 +74,9 @@ export default function App() {
               id="header-fiverr-link"
             >
               <img 
-                src="/fiverr_custom.jpg" 
+                src={fiverrIcon} 
                 alt="Fiverr Icon" 
-                className="w-6 h-6 rounded-md object-cover border border-neutral-200" 
+                className="h-4 sm:h-5 object-contain" 
               />
             </a>
             <a href="#projects" className="hover:text-neutral-950 transition-colors uppercase">
