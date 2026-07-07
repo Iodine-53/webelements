@@ -12,7 +12,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({ isOpen, onClose })
   const [formState, setFormState] = useState({
     name: "",
     email: "",
-    projectType: "editorial",
+    
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
@@ -23,16 +23,28 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({ isOpen, onClose })
 
     setStatus("submitting");
 
+    const emailSubject = encodeURIComponent(`[Project Request] ${formState.name}`);
+    const emailBody = encodeURIComponent(
+      `Hello,\n\nI would like to inquire about a project:\n\n` +
+      `Name: ${formState.name}\n` +
+      `Email: ${formState.email}\n` +
+      
+      `Project Synopsis & Boundaries:\n${formState.message}\n\n` +
+      `Best regards,\n${formState.name}`
+    );
+    const mailtoUrl = `mailto:creativfussion01@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+
     setTimeout(() => {
       setStatus("success");
-    }, 1800);
+      window.location.href = mailtoUrl;
+    }, 1200);
   };
 
   const handleReset = () => {
     setFormState({
       name: "",
       email: "",
-      projectType: "editorial",
+      
       message: "",
     });
     setStatus("idle");
@@ -102,23 +114,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({ isOpen, onClose })
                     />
                   </div>
 
-                  <div>
-                    <label className="block text-[10px] font-mono text-neutral-400 tracking-wider uppercase mb-1.5">
-                      PROJECT CATEGORY
-                    </label>
-                    <select
-                      value={formState.projectType}
-                      onChange={(e) => setFormState({ ...formState, projectType: e.target.value })}
-                      className="w-full bg-neutral-950 border border-neutral-800 rounded px-3 py-2.5 text-xs font-mono text-neutral-300 focus:outline-none focus:border-neutral-500 transition-colors"
-                    >
-                      <option value="travel">SPOT TRAVEL [CURATED TRAVEL DESIGN & ARCHITECTURE]</option>
-                      <option value="aura">AURA [DECENTRALIZED SOCIAL ECOSYSTEM / WEB3]</option>
-                      <option value="brutalist">KORE [BRUTALIST ARCHITECTURAL GRID]</option>
-                      <option value="editorial">VELLUM [EDITORIAL TEXT SYSTEM]</option>
-                      <option value="generative">NERO ESTORE [TECHNICAL E-COMMERCE CONFIGURATOR]</option>
-                      <option value="custom">BESPOKE BRANDING / SPECIAL INQUIRY</option>
-                    </select>
-                  </div>
+
 
                   <div>
                     <label className="block text-[10px] font-mono text-neutral-400 tracking-wider uppercase mb-1.5">
@@ -142,12 +138,12 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({ isOpen, onClose })
                     {status === "submitting" ? (
                       <>
                         <span className="w-3.5 h-3.5 border-2 border-neutral-950 border-t-transparent rounded-full animate-spin" />
-                        <span>MUTATING DATA STREAM...</span>
+                        <span>SENDING...</span>
                       </>
                     ) : (
                       <>
                         <Send className="w-3.5 h-3.5" />
-                        <span>DISPATCH INQUIRY VECTOR</span>
+                        <span>SEND MESSAGE</span>
                       </>
                     )}
                   </button>
@@ -161,10 +157,10 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({ isOpen, onClose })
                   <CheckCircle2 className="w-12 h-12 text-green-400" />
                   <div>
                     <h3 className="font-display font-medium text-lg tracking-tight text-white mb-2">
-                      TRANSMISSION COMPLETE
+                      MESSAGE SENT
                     </h3>
                     <p className="text-neutral-400 text-xs leading-relaxed max-w-xs font-mono">
-                      Inquiry coordinates successfully integrated. Webelements will calibrate a detailed analytical response within 24 hours.
+                      Message sent successfully. We will get back to you within 24 hours.
                     </p>
                   </div>
 
@@ -177,19 +173,6 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({ isOpen, onClose })
                   </button>
                 </motion.div>
               )}
-            </div>
-
-            <div className="p-6 border-t border-neutral-800 bg-neutral-950/40 text-[9px] font-mono text-neutral-500 flex flex-col gap-2">
-              <div className="flex justify-between">
-                <span>DIRECT PHONE:</span>
-                <span className="text-neutral-400">+45 32 94 88 01</span>
-              </div>
-              <div className="flex justify-between">
-                <span>INBOX COORDINATES:</span>
-                <a href={`mailto:${designerInfo.email}`} className="text-neutral-400 hover:underline">
-                  {designerInfo.email}
-                </a>
-              </div>
             </div>
           </motion.div>
         </>

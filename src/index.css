@@ -7,7 +7,6 @@
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
-/* Base resets & custom scrollbar for extreme premium finish */
 @layer base {
   body {
     background-color: #FAF9F6;
@@ -17,7 +16,6 @@
   }
 }
 
-/* Custom minimal scrollbar to match architectural look */
 .custom-scrollbar::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -34,4 +32,46 @@
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(18, 18, 18, 0.3);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  user-select: none;
+  line-height: 1;
+}
+.wordmark span { white-space: nowrap; }
+
+.ring {
+  display: inline-block;
+  height: 0.62em;
+  width: 0.62em;
+  border-radius: 999px;
+  background: transparent;
+  box-sizing: border-box;
+  vertical-align: middle;
+  margin: 0 0.05em;
+}
+.ring-1 { border: 0.1em solid #2563eb; animation: phaseA 4.2s cubic-bezier(.65,0,.35,1) infinite; }
+.ring-2 { border: 0.1em solid #eab308; animation: phaseB 4.2s cubic-bezier(.65,0,.35,1) infinite; }
+.ring-3 { border: 0.1em solid #ef4444; }
+
+@keyframes phaseA {
+  0%   { width: 0.62em; }
+  15%  { width: 2.5em;  }
+  25%  { width: 2.5em;  }
+  38%  { width: 0.48em; }
+  45%  { width: 0.62em; }
+  100% { width: 0.62em; }
+}
+@keyframes phaseB {
+  0%   { width: 0.62em; }
+  50%  { width: 0.62em; }
+  65%  { width: 2.5em;  }
+  75%  { width: 2.5em;  }
+  88%  { width: 0.48em; }
+  95%  { width: 0.62em; }
+  100% { width: 0.62em; } 
 }

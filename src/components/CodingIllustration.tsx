@@ -48,10 +48,8 @@ export function CodingIllustration() {
 
   return (
     <div className="relative w-full aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/5] xl:aspect-[3/4] flex flex-col items-center justify-center overflow-visible select-none py-4">
-      {/* Dynamic ambient colored aura that pulses slowly */}
       <div className="absolute inset-0 bg-radial-[circle_at_50%_50%] from-sky-400/10 via-violet-500/5 to-transparent pointer-events-none blur-3xl animate-pulse" />
 
-      {/* Embedded CSS for Lottie orbital paths and floating nodes */}
       <style>{`
         .lottie-orbit-container {
           perspective: 1200px;
@@ -73,7 +71,6 @@ export function CodingIllustration() {
           animation: float-lottie-card 6s infinite ease-in-out;
         }
 
-        /* 3D Circular Orbit badges */
         @keyframes orbit-react {
           0% { transform: rotate(0deg) translateX(155px) rotate(0deg) scale(0.9); z-index: 30; }
           25% { scale: 1.1; }
@@ -105,19 +102,15 @@ export function CodingIllustration() {
         }
       `}</style>
 
-      {/* Main Container - Floats elegantly */}
       <div className="relative w-full max-w-[430px] lottie-card-float flex flex-col items-center justify-center">
         
-        {/* ================= 3D ORBITAL BACKGROUND GUIDES ================= */}
         <div className="absolute inset-0 lottie-orbit-container pointer-events-none flex items-center justify-center scale-105">
           <div className="absolute w-[310px] h-[310px] rounded-full border border-dashed border-neutral-300/40 orbit-axis-1" />
           <div className="absolute w-[310px] h-[310px] rounded-full border border-dashed border-neutral-300/30 orbit-axis-2" />
         </div>
 
-        {/* ================= THE GLASSMORPHIC DEV SHELL WINDOW ================= */}
         <div className="relative w-full bg-white/75 backdrop-blur-xl border border-neutral-200/80 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.06)] overflow-hidden transition-all duration-300 hover:shadow-[0_24px_60px_rgba(0,0,0,0.08)]">
           
-          {/* Header Bar */}
           <div className="flex items-center justify-between px-4 py-3 bg-neutral-50/50 border-b border-neutral-200/50">
             <div className="flex items-center gap-1.5">
               <span className="w-3 h-3 rounded-full bg-[#FF5F56] border border-red-400/20" />
@@ -125,7 +118,7 @@ export function CodingIllustration() {
               <span className="w-3 h-3 rounded-full bg-[#27C93F] border border-green-400/20" />
               <span className="ml-2 font-mono text-[10px] text-neutral-400 uppercase tracking-widest flex items-center gap-1">
                 <Laptop className="w-3 h-3 text-neutral-400" />
-                WORKSPACE // CREATIVE_ENGINE
+                WORKSPACE
               </span>
             </div>
             
@@ -138,9 +131,7 @@ export function CodingIllustration() {
             </button>
           </div>
 
-          {/* Core Animation Area */}
           <div className="relative bg-gradient-to-b from-neutral-50/40 to-white/90 p-4 flex items-center justify-center min-h-[250px] sm:min-h-[280px]">
-            {/* Lottie Animation Player */}
             <div className="w-full max-w-[340px] aspect-video sm:aspect-square flex items-center justify-center overflow-hidden">
               <Lottie 
                 lottieRef={lottieRef}
@@ -151,10 +142,9 @@ export function CodingIllustration() {
               />
             </div>
 
-            {/* Glowing active overlays */}
             <div className="absolute bottom-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 pointer-events-none">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="font-mono text-[8px] text-emerald-700 tracking-wider">ANIMATION // LIVE</span>
+              <span className="font-mono text-[8px] text-emerald-700 tracking-wider">ANIMATION LIVE</span>
             </div>
 
             <div className="absolute bottom-3 right-3 flex items-center gap-1 px-2 py-0.5 rounded-md bg-neutral-100 border border-neutral-200/40 pointer-events-none">
@@ -162,7 +152,6 @@ export function CodingIllustration() {
             </div>
           </div>
 
-          {/* Interactive HUD Dashboard / Controller Row */}
           <AnimatePresence>
             {showHUD && (
               <motion.div 
@@ -172,7 +161,6 @@ export function CodingIllustration() {
                 transition={{ duration: 0.25 }}
                 className="border-t border-neutral-200/50 bg-neutral-50/30 px-4 py-3 flex flex-wrap items-center justify-between gap-3 overflow-hidden"
               >
-                {/* Play / Pause / Reset Buttons */}
                 <div className="flex items-center gap-1.5">
                   <button
                     onClick={handlePlayPause}
@@ -190,7 +178,6 @@ export function CodingIllustration() {
                   </button>
                 </div>
 
-                {/* Speed Increments */}
                 <div className="flex items-center gap-1 bg-white border border-neutral-200/80 p-0.5 rounded-lg shadow-2xs">
                   <span className="px-2 text-[9px] font-mono text-neutral-400 flex items-center gap-1">
                     <Gauge className="w-2.5 h-2.5" />
@@ -216,10 +203,8 @@ export function CodingIllustration() {
 
         </div>
 
-        {/* ================= REVOLVING INTERACTIVE NODES ================= */}
         <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
           
-          {/* Badge 1: REACT */}
           <div 
             className="absolute p-1 select-none pointer-events-auto orbiting-react cursor-pointer"
             onMouseEnter={() => setHoveredBadge("React Core Rendering")}
@@ -237,7 +222,6 @@ export function CodingIllustration() {
             </div>
           </div>
 
-          {/* Badge 2: TYPESCRIPT */}
           <div 
             className="absolute p-1 select-none pointer-events-auto orbiting-ts cursor-pointer"
             onMouseEnter={() => setHoveredBadge("TypeScript Type Safety")}
@@ -250,7 +234,6 @@ export function CodingIllustration() {
             </div>
           </div>
 
-          {/* Badge 3: TERMINAL */}
           <div 
             className="absolute p-1 select-none pointer-events-auto orbiting-terminal cursor-pointer"
             onMouseEnter={() => setHoveredBadge("Computational Logic")}
@@ -263,7 +246,6 @@ export function CodingIllustration() {
 
         </div>
 
-        {/* ================= INTERACTIVE PORTAL TOOLTIP ================= */}
         <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 z-30 h-8">
           <AnimatePresence mode="wait">
             {hoveredBadge ? (
@@ -276,7 +258,7 @@ export function CodingIllustration() {
                 className="bg-neutral-950/95 backdrop-blur-md text-white border border-neutral-800 px-3.5 py-1.5 rounded-full text-[9px] font-mono tracking-widest flex items-center gap-1.5 shadow-lg whitespace-nowrap"
               >
                 <Sparkles className="w-3 h-3 text-sky-400 animate-pulse" />
-                <span>PROTOCOL // {hoveredBadge.toUpperCase()}</span>
+                <span>{hoveredBadge.toUpperCase()}</span>
               </motion.div>
             ) : (
               <motion.div
