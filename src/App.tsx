@@ -14,7 +14,7 @@ import { CodingIllustration } from "./components/CodingIllustration";
 import { ServicesSection } from "./components/ServicesSection";
 import { ContactSection } from "./components/ContactSection";
 import fiverrIcon from "./assets/images/fiverr_icon.svg";
-import logoImg from "./assets/images/logo.jpg";
+import logoImg from "./assets/images/logo.png";
 
 export default function App() {
   const [isContactOpen, setIsContactOpen] = useState(false);
